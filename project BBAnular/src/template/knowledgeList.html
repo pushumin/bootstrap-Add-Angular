@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-lg-4" ng-repeat="kl in knowledgeList">
+    <img class="img-circle" ng-src="http://tnfs.tngou.net/image/{{kl.img}}" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+    <h2>{{kl.title}}</h2>
+    <p class="knowledgelist">{{kl.description}}</p>
+    <p><a class="btn btn-default" ui-sref="navbar.knowledgeDetail({id:kl.id})" role="button">进入了解</a></p>
+  </div><!-- /.col-lg-4 -->
+</div><!-- /.row -->
+
+
+
+
+<nav>
+  <ul class="pagination">
+    <li ng-repeat="page in pageLCountist"><a href="#/navbar/knowledgeList/{{id}}/{{page}}">{{page}}</a></li>
+  </ul>
+</nav>
