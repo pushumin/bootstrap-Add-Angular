@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-lg-4" ng-repeat="bl in bookList">
+    <img class="img-circle" ng-src="http://tnfs.tngou.net/image/{{bl.img}}" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+    <h2>{{bl.name}}</h2>
+    <p>作者：{{bl.author}}</p>
+    <p>点击数：{{bl.count}}</p>
+    <p class="booklist">{{bl.summary}}</p>
+    <p><a class="btn btn-default" ui-sref="navbar.bookDetail({id:bl.id})" role="button">View details &raquo;</a></p>
+  </div><!-- /.col-lg-4 -->
+</div><!-- /.row -->
+
+
+
+
+<nav>
+  <ul class="pagination">
+    <li ng-repeat="page in pageLCountist"><a href="#/navbar/bookList/{{id}}/{{page}}">{{page}}</a></li>
+  </ul>
+</nav>

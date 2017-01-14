@@ -1,0 +1,44 @@
+<!--<div class="row featurette">
+	
+    <div class="col-md-12">
+      <h2 class="featurette-heading">{{consultationDetail.title}} <span class="text-muted">{{consultationDetail.food}}</span></h2>
+      <p class="lead">{{consultationDetail.description}}</p>
+    
+
+      <p class="lead" compile="consultationDetail.message"></p>
+    
+
+		<a href="javascript:void(0)"  ng-click="back('foodDetailGoBack')" id="foodDetailGoBack" tabindex="0" 
+		class="btn btn-lg btn-danger" 
+		role="button" data-toggle="popover" data-trigger="focus" title="返回前页" data-content="你在当前页面进行了直接刷新，找不到回去的路了！">返回前页</a>
+
+    </div>
+</div>
+-->
+<div class="container marketing" style="padding:20px;">
+	<div class="row featurette">
+	    <div>
+	    	<h2 class="featurette-heading">{{consultationDetail.title}} <span class="text-muted">{{consultationDetail.food}}</span></h2>
+	    	<p class="lead" compile="consultationDetail"></p>
+      		<p class="lead" compile="consultationDetail.message"></p>
+	    	<p class="lead" compile="consultationDetail.summary"></p>
+      		<p class="lead">{{consultationDetail.description}}</p>
+	    	
+			<!--<p class="lead">{{consultationDetail.message}}</p>
+			<p class="lead">{{consultationDetail.summary}}</p>-->
+      		<!--<p class="lead" compile="consultationDetail"></p>
+      		<p class="lead" compile="consultationDetail.message"></p>
+	    	<p class="lead" compile="consultationDetail.summary"></p>-->
+
+			<a href="javascript:void(0)"  ng-click="back('foodDetailGoBack')" id="foodDetailGoBack" tabindex="0" 
+			class="btn btn-lg btn-danger" 
+			role="button" data-toggle="popover" data-trigger="focus" title="返回前页" data-content="你在当前页面进行了直接刷新，找不到回去的路了！">返回前页</a>
+
+	    </div>
+	</div>
+
+</div>
+
+
+
+
