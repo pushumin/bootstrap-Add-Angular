@@ -163,21 +163,21 @@ var healthApp =angular.module('health',['ui.router'])
 
 	/*------------------- healthFood ------------------*/
 	$http({
-		url:'http://1309399814.applinzi.com/php1/healthFoodClassfiy.php'
+		url:'http://localhost/php/healthFoodClassfiy.php'
 	}).then(function(res){
 			$scope.foodcategories = res.data.tngou;
 	});
 	
 	/*------------------- healthAsk ------------------*/
 	$http({
-		url:'http://1309399814.applinzi.com/php1/healthAskClassfiy.php'
+		url:'http://localhost/php/healthAskClassfiy.php'
 	}).then(function(res){
 			$scope.healthAskCategories = res.data.tngou;
 	});
 	
 	/*------------------- book ------------------*/
 	$http({
-		url:'http://1309399814.applinzi.com/php1/book-classify.php'
+		url:'http://localhost/php/book-classify.php'
 	}).then(function(res){
 		$scope.bookcategories = res.data.tngou;
 
@@ -185,7 +185,7 @@ var healthApp =angular.module('health',['ui.router'])
 	
 	/*------------------- knowledage ------------------*/
 	$http({
-		url:'http://1309399814.applinzi.com/php1/knowledge-classify.php'
+		url:'http://localhost/php/knowledge-classify.php'
 	}).then(function(res){
 		$scope.knowledgecategories = res.data.tngou;
 
@@ -193,14 +193,14 @@ var healthApp =angular.module('health',['ui.router'])
 	
 	/*-------------- consultation ---------------------*/
 	$http({
-		url:'http://1309399814.applinzi.com/php1/health-categories.php'
+		url:'http://localhost/php/health-categories.php'
 	}).then(function(res){
 		$scope.consulationCategories = res.data.tngou;
 	});
 	
 	/*------------- drugs -----------*/
 	$http({
-		url:'http://1309399814.applinzi.com/php1/medication-categories.php'
+		url:'http://localhost/php/medication-categories.php'
 	}).then(function(res){
 		$scope.drugscategories = res.data.tngou;
 	})
@@ -216,7 +216,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*--------------- healthFood   foodList   foodListController --------------------*/
 .controller('foodListController',function($scope,$stateParams,$http){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/healthFoodList.php',
+		url:'http://localhost/php/healthFoodList.php',
 		params:{
 			id:$stateParams.id,
 			page:$stateParams.page
@@ -237,7 +237,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*--------------- healthFood   foodDetail   foodDetailController --------------------*/
 .controller('foodDetailController',function($scope,$stateParams,$http,$sce){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/healthFoodDetail.php',
+		url:'http://localhost/php/healthFoodDetail.php',
 		params:{
 			id:$stateParams.id
 		}
@@ -252,7 +252,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*-------------------- healthAsk  navbarController --------------------------------*/
 //.controller('navbarController',function($scope,$http){
 //	$http({
-//		url:'http://1309399814.applinzi.com/php1/healthAskClassfiy.php'
+//		url:'http://localhost/php/healthAskClassfiy.php'
 //	}).then(function(res){
 //			$scope.healthAskCategories = res.data.tngou;
 //	})
@@ -261,7 +261,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*--------------- healthAsk   healthAskList   healthAskListController --------------------*/
 .controller('healthAskListController',function($scope,$stateParams,$http){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/healthAskList.php',
+		url:'http://localhost/php/healthAskList.php',
 		params:{
 			id:$stateParams.id,
 			page:$stateParams.page
@@ -284,7 +284,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*--------------- healthAsk   healthAskDetail   healthAskDetailController --------------------*/
 .controller('healthAskDetailController',function($scope,$stateParams,$http,$sce){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/healthAskDetail.php',
+		url:'http://localhost/php/healthAskDetail.php',
 		params:{
 			id:$stateParams.id
 		}
@@ -301,7 +301,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*--------------- book   bookList   bookListController --------------------*/
 .controller('bookListController',function($scope,$stateParams,$http){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/book-list.php',
+		url:'http://localhost/php/book-list.php',
 		params:{
 			id:$stateParams.id,
 			page:$stateParams.page
@@ -324,16 +324,13 @@ var healthApp =angular.module('health',['ui.router'])
 /*--------------- book   bookDetail   bookDetailController --------------------*/
 .controller('bookDetailController',function($scope,$stateParams,$http,$sce){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/book-detail.php',
+		url:'http://localhost/php/book-detail.php',
 		params:{
 			id:$stateParams.id
 		}
 	}).then(function(res){
-		$scope.bookDetail = res.data;
-		$scope.pos1 = res.data.indexOf("{");
-		$scope.detail2=$scope.bookDetail.substring($scope.pos1);
-		$scope.bookObj = JSON.parse($scope.detail2);
-		console.log($scope.bookObj)
+		$scope.Detail = res.data;
+		console.log(res);
 	})
 })
 
@@ -341,7 +338,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*--------------------- knowledage knowledageList knowledgeListController----------------*/
 .controller('knowledgeListController',function($scope,$stateParams,$http){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/knowledge-list.php',
+		url:'http://localhost/php/knowledge-list.php',
 		params:{
 			id:$stateParams.id,
 			page:$stateParams.page
@@ -365,12 +362,13 @@ var healthApp =angular.module('health',['ui.router'])
 .controller('knowledgeDetailController',function($scope,$stateParams,$http){
     console.log(11)
 	$http({
-		url:'http://1309399814.applinzi.com/php1/knowledge-detail.php',
+		url:'http://localhost/php/knowledge-detail.php',
 		params:{
 			id:$stateParams.id
 		}
 	}).then(function(res){
 		$scope.detail = res.data;
+		console.log(res.data);
 	})
 })
 
@@ -381,7 +379,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*----------------- consultation consultationList consultationListController ----------------------*/
 .controller('consultationListController',function($scope,$stateParams,$http){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/health-list.php',
+		url:'http://localhost/php/health-list.php',
 		params:{
 			id:$stateParams.id,
 			page:$stateParams.page
@@ -401,14 +399,15 @@ var healthApp =angular.module('health',['ui.router'])
 /*----------------- consultation consultationDetail consultationDetailController ----------------------*/
 .controller('consultationDetailController',function($scope,$stateParams,$http,$sce){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/health-detail.php',
+		url:'http://localhost/php/health-detail.php',
 		params:{
 			id:$stateParams.id
 		}
 	}).then(function(res){
 		$scope.consultationDetail = res.data;
+		console.log(res.data)
 		$scope.pos = res.data.indexOf("{");
-		$scope.detail1=$scope.consultationDetail.substring($scope.pos);
+		$scope.detail1=$scope.detail.substring($scope.pos);
 		$scope.detailObj = JSON.parse($scope.detail1);
 		
 	})
@@ -417,7 +416,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*----------------- drugs drugsList drugsListController ----------------------*/
 .controller('drugsListController',function($scope,$stateParams,$http){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/medication-list.php',
+		url:'http://localhost/php/medication-list.php',
 		params:{
 			id:$stateParams.id,
 			page:$stateParams.page
@@ -437,7 +436,7 @@ var healthApp =angular.module('health',['ui.router'])
 /*----------------- drugs drugsDetail drugsDetailController ----------------------*/
 .controller('drugsDetailController',function($scope,$stateParams,$http,$sce){
 	$http({
-		url:'http://1309399814.applinzi.com/php1/medication-detail.php',
+		url:'http://localhost/php/medication-detail.php',
 		params:{
 			id:$stateParams.id
 		}

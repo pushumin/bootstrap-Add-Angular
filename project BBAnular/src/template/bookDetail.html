@@ -2,14 +2,14 @@
 
 	<div class="row featurette">
 		<div>
-	      <img class="featurette-image img-responsive" ng-src="{{foodPrefix}}{{bookDetail.img}}" alt="{{bookDetail.keywords}}">
+	      <img class="featurette-image img-responsive" ng-src="http://tnfs.tngou.net/image{{bookObj.img}}" alt="{{bookObj.keywords}}">
 	    </div>
 	    <div>
-	      <h2 class="featurette-heading">{{bookDetail.name}} </h2>
-	      <p class="lead">{{bookDetail.summary}}</p>
+	      <h2 class="featurette-heading">{{bookObj.name}} </h2>
+	      <p class="lead">{{bookObj.description}}</p>
 	    
 
-	      <p class="lead" compile="bookDetail.message"></p>
+	      <p class="lead" compile="bookObj.message"></p>
 	    
 
 			<a href="javascript:void(0)"  ng-click="back('foodDetailGoBack')" id="foodDetailGoBack" tabindex="0" 
